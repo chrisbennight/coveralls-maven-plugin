@@ -89,14 +89,6 @@ public final class Source implements JsonObject {
     }
     
     public void addCoverage(final int lineNumber, final Integer coverage) {
-        try {
-            this.coverage[lineNumber - 1] = coverage;
-        } catch (Exception ex) {
-            System.out.println("----------------");
-            System.out.println("Coverage parsing error for file: " + this.name);
-            System.out.println("Expected max line was: " + this.coverage.length + ".");
-            System.out.println("Requested line was: " + (lineNumber - 1));
-            System.out.println("----------------");
-        }
+        this.coverage[lineNumber - 1] = coverage;
     }
 }
